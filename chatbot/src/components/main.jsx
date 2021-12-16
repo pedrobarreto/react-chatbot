@@ -3,6 +3,7 @@ import styled, { keyframes } from "styled-components";
 import { motion } from "framer-motion";
 import { AccountContext } from './context';
 import iphone from '../components/ios.png';
+import { LoginForm } from './login';
 
 const IphoneBox = styled.div`
   margin: 60px;
@@ -168,6 +169,7 @@ export function AccountBox(props) {
           )}
         </TopContainer>
         <InnerContainer>
+          {active === "signin" && <LoginForm />}
         </InnerContainer>
       </BoxContainer>
       </IphoneBox>
