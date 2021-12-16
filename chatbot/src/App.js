@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import './App.css';
 import { AccountBox } from './components/main';
 
 const AppContainer = styled.div`
