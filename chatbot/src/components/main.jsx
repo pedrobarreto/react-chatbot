@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { AccountContext } from './context';
 import iphone from '../components/ios.png';
 import { LoginForm } from './login';
+import { SignupForm } from './signup';
 
 const IphoneBox = styled.div`
   margin: 60px;
@@ -170,6 +171,7 @@ export function AccountBox(props) {
         </TopContainer>
         <InnerContainer>
           {active === "signin" && <LoginForm />}
+          {active === "signup" && <SignupForm />}
         </InnerContainer>
       </BoxContainer>
       </IphoneBox>
