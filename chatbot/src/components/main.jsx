@@ -29,9 +29,9 @@ const rotating = keyframes`
 `;
 
 const BoxContainer = styled.div`
-  top: 22px;
-  left: 19px;
-  width:  303px;
+  top: 23px;
+  left: 17px;
+  width:  306px;
   min-height: 651px;
   display: flex;
   flex-direction: column;
@@ -93,20 +93,23 @@ const InnerContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
 `;
 
 const backdropVariants = {
   expanded: {
-    width: "233%",
-    height: "1050px",
+    width: "290%",
+    height: "1162px",
     borderRadius: "20%",
     transform: "rotate(60deg)",
+    left: "-170px",
   },
   collapsed: {
     width: "160%",
     height: "550px",
     borderRadius: "50%",
     transform: "rotate(60deg)",
+    left: "-70px",
   },
 };
 
@@ -123,7 +126,14 @@ export function AccountBox(props) {
   const playExpandingAnimation = () => {
     setExpanded(true);
     setTimeout(() => {
-      setExpanded(false);
+      // setExpanded(false);
+    }, expandingTransition.duration * 1000 - 1500);
+  };
+
+  const rollbackExpandingAnimation = () => {
+    setExpanded(false);
+    setTimeout(() => {
+      // setExpanded(false);
     }, expandingTransition.duration * 1000 - 1500);
   };
 
@@ -135,7 +145,7 @@ export function AccountBox(props) {
   };
 
   const switchToSignin = () => {
-    playExpandingAnimation();
+    rollbackExpandingAnimation();
     setTimeout(() => {
       setActive("signin");
     }, 400);

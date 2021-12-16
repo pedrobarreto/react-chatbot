@@ -2,10 +2,10 @@ import React, { useContext } from "react";
 import {
   BoldLink,
   BoxContainer,
-  FormContainer,
+  SignContainer,
   Input,
   Link,
-  SubmitBtn,
+  SignBtn,
 } from "./inputs";
 import { Marginer } from './margins';
 import { AccountContext } from './context';
@@ -15,14 +15,14 @@ export function SignupForm(props) {
 
   return (
     <BoxContainer>
-      <FormContainer>
+      <SignContainer>
         <Input type="text" placeholder="Nome Completo" />
         <Input type="email" placeholder="Email" />
         <Input type="password" placeholder="Senha" />
         <Input type="password" placeholder="Confirmar Senha" />
-      </FormContainer>
+      </SignContainer>
       <Marginer direction="vertical" margin={10} />
-      <SubmitBtn type="submit">Enviar</SubmitBtn>
+      <SignBtn type="submit" onClick={switchToSignin} >Enviar </SignBtn>
       <Marginer direction="vertical" margin="1em" />
       <Link href="#">
         Já possui uma conta ? 
