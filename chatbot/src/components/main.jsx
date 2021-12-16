@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
+import { motion } from "framer-motion";
 import { AccountContext } from './context';
 import iphone from '../components/ios.png';
 
@@ -48,7 +49,7 @@ const TopContainer = styled.div`
   padding-bottom: 5em;
 `;
 
-const BackDrop = styled.div`
+const BackDrop = styled(motion.div)`
   width: 160%;
   height: 700px;
   position: absolute;
