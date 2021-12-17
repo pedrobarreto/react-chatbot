@@ -5,6 +5,7 @@ import { AccountContext } from './context';
 import iphone from '../components/ios.png';
 import { LoginForm } from './login';
 import { SignupForm } from './signup';
+import Axios from 'axios';
 
 const IphoneBox = styled.div`
   margin: 60px;
@@ -122,6 +123,7 @@ const expandingTransition = {
 export function AccountBox(props) {
   const [isExpanded, setExpanded] = useState(false);
   const [active, setActive] = useState("signin");
+  const [userInfo, setUserInfo] = useState({});
 
   const playExpandingAnimation = () => {
     setExpanded(true);
@@ -149,9 +151,15 @@ export function AccountBox(props) {
     setTimeout(() => {
       setActive("signin");
     }, 400);
+    Axios.post("http://localhost:3001/create", {
+      name: userInfo.name,
+      email: userInfo.email,
+      password: userInfo.password,
+    }).then(()=> {console.log('yes!');
+  })
   };
 
-  const contextValue = { switchToSignup, switchToSignin };
+  const contextValue = { switchToSignup, switchToSignin, userInfo, setUserInfo };
 
   return (
     <AccountContext.Provider value={contextValue}>
