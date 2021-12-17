@@ -22,7 +22,7 @@ export function LoginForm(props) {
       <Marginer direction="vertical" margin={10} />
       <Link href="#">Esqueceu sua senha?</Link>
       <Marginer direction="vertical" margin="1.6em" />
-      <SubmitBtn type="submit">Entrar</SubmitBtn>
+      <SubmitBtn type="submit" >Entrar</SubmitBtn>
       <Marginer direction="vertical" margin="1em" />
       <Link href="#">
         Não tem uma conta ?{" "}
